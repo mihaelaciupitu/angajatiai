@@ -62,7 +62,7 @@
   a { color: var(--ink); }
   a:focus-visible, summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
   h1 mark { white-space: nowrap; }
-  .perday { white-space: nowrap; }
+  .perday { display: block; font-size: 15px; margin-top: 2px; }
   mark { background: var(--coral-soft); color: var(--ink); padding: 0 .12em; border-radius: 6px;
     -webkit-box-decoration-break: clone; box-decoration-break: clone; }
   .note { font-size: 13px; line-height: 1.45; color: var(--note); }
@@ -135,6 +135,9 @@
   .list .no { color: var(--off); }
   .list .no::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 5.5l9 9M14.5 5.5l-9 9' fill='none' stroke='%236E7487' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"); }
   .plan .btn { margin-top: 20px; }
+  .alt { margin: 10px 0 0; color: var(--text2); font-size: 16px; }
+  .plan .alt { text-align: center; }
+  .plan .list + .alt { margin-top: 18px; }
   .year { background: var(--panel); border-radius: 20px; padding: 16px 18px; color: var(--text2); margin-bottom: 12px; }
   .year strong { color: var(--ink); }
   .after p { color: var(--text2); font-size: 16px; }
@@ -234,7 +237,7 @@
       <!-- LINK ÎNCEPE LUNA GRATUITĂ (1 din 4) -->
       <a class="btn" id="cta-sus" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
       <p class="note">Plătești doar setup-ul, de la 790 lei · prima lună gratuită · TVA inclus</p>
-      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (1 din 2). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (1 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
       <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
     </div>
   </div>
@@ -286,7 +289,7 @@
       <article class="plan" aria-labelledby="p1">
         <h3 id="p1">Esențial</h3>
         <p class="for">Pentru cine vrea să posteze constant, fără bătăi de cap.</p>
-        <p class="price"><b>690 lei</b> / lună <span class="perday">· cam 23 lei pe zi</span></p>
+        <p class="price"><b>690 lei</b> / lună <span class="perday">cam 23 lei pe zi</span></p>
         <p class="note">setup 790 lei, o singură dată · sistem 100% personalizat</p>
         <ul class="list">
           <li class="yes"><span class="sr">Include: </span>Texte în vocea ta, aprobate de tine</li>
@@ -296,13 +299,15 @@
           <li class="no"><span class="sr">Nu include: </span>Răspunsuri la comentarii</li>
           <li class="no"><span class="sr">Nu include: </span>Discuție lunară</li>
         </ul>
+        <!-- LINK ÎNCEPE CU ESENȚIAL -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Esen%C8%9Bial.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Esențial</a></p>
       </article>
 
       <article class="plan pro" aria-labelledby="p2">
         <span class="badge">cel mai ales</span>
         <h3 id="p2">Profesional</h3>
         <p class="for">Pentru cine vrea să crească, nu doar să posteze.</p>
-        <p class="price"><b>850 lei</b> / lună</p>
+        <p class="price"><b>850 lei</b> / lună <span class="perday">cam 28 lei pe zi</span></p>
         <p class="note">setup 990 lei, o singură dată · sistem 100% personalizat</p>
         <ul class="list">
           <li class="yes"><span class="sr">Include: </span>Tot din Esențial: texte, publicare, remindere, strategie</li>
@@ -312,14 +317,16 @@
           <li class="yes"><span class="sr">Include: </span>Un om care îți ajustează stilul și sistemul după nevoile tale</li>
           <li class="yes"><span class="sr">Include: </span>Răspuns în aceeași zi lucrătoare</li>
         </ul>
-        <!-- LINK ÎNCEPE LUNA GRATUITĂ (2 din 4) -->
-        <a class="btn" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+        <!-- LINK ÎNCEPE LUNA GRATUITĂ (2 din 4), cu mesajul „cu Profesional” -->
+        <a class="btn" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Profesional.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+        <!-- LINK PROGRAMEAZĂ O DISCUȚIE (2 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+        <p class="alt">sau <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a></p>
       </article>
 
       <article class="plan" aria-labelledby="p3">
         <h3 id="p3">Premium</h3>
         <p class="for">Pentru cine are două conturi sau scrie în două limbi.</p>
-        <p class="price"><b>1.690 lei</b> / lună</p>
+        <p class="price"><b>1.690 lei</b> / lună <span class="perday">cam 56 lei pe zi</span></p>
         <p class="note">setup 1.790 lei, o singură dată · sistem 100% personalizat</p>
         <ul class="list">
           <li class="yes"><span class="sr">Include: </span>Tot din Profesional: comentarii, discuție lunară, remindere</li>
@@ -328,6 +335,8 @@
           <li class="yes"><span class="sr">Include: </span>Strategie de 2 ori pe lună și plan pentru lansări</li>
           <li class="yes"><span class="sr">Include: </span>Răspuns prioritar</li>
         </ul>
+        <!-- LINK ÎNCEPE CU PREMIUM -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Premium.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Premium</a></p>
       </article>
     </div>
 
@@ -403,6 +412,8 @@
       <p>Dacă e din cauza sistemului nostru, o refacem în cel mult 24 de ore.</p></details>
     <details><summary>Pot renunța?</summary>
       <p>Da. Ne anunți până în ziua 25 a lunii și abonamentul se oprește la finalul lunii, fără penalități. Setup-ul nu se returnează. La plata pe an, suma se plătește dinainte și nu se returnează dacă renunți mai devreme.</p></details>
+    <!-- LINK PROGRAMEAZĂ O DISCUȚIE (3 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+    <p class="alt" style="margin-top:18px">Ai altă întrebare? <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>.</p>
   </div>
 </section>
 
@@ -427,7 +438,7 @@
       <!-- LINK ÎNCEPE LUNA GRATUITĂ (3 din 4) -->
       <a class="btn" id="cta-final" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
       <p class="note">Plata lunară e fără angajament: renunți anunțând până în ziua 25 a lunii.</p>
-      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (2 din 2). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (4 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
       <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
     </div>
   </div>
