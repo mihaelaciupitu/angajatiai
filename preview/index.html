@@ -114,17 +114,32 @@
   .slides { list-style: none; margin: 0; padding: 0 0 6px; display: flex; gap: 12px; overflow-x: auto;
     scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; align-items: stretch; }
   .slides::-webkit-scrollbar { display: none; }
-  .slide { flex: 0 0 86%; scroll-snap-align: start; background: var(--panel); border-radius: 20px; padding: 0 12px 14px; display: flex; flex-direction: column; }
-  .tg-head { display: flex; align-items: center; gap: 10px; margin: 0 -12px 12px; padding: 10px 14px; border-bottom: 1px solid var(--line);
-    background: rgba(255,255,255,.6); border-radius: 20px 20px 0 0; font-size: 14px; line-height: 1.2; }
-  .tg-head b { display: block; }
-  .tg-head small { color: var(--note); font-size: 12px; }
-  .tg-ava { width: 30px; height: 30px; border-radius: 50%; background: var(--coral-soft); flex: none; }
-  .slide .msg.bot { max-width: 100%; margin-top: 8px; }
-  .slide .msg.bot p { margin: 0 0 8px; color: var(--ink); }
-  .slide .msg.bot p.small { color: var(--note); margin-bottom: 4px; }
-  .slide .msg.bot .time { text-align: right; font-size: 12px; color: var(--note); margin: 0; }
-  .slide .cap { margin: auto 2px 0; padding-top: 12px; font-weight: 700; font-size: 15px; }
+  .slide { flex: 0 0 82%; scroll-snap-align: start; }
+  /* Ecranul de Telegram desenat (ilustrație, nu se apasă nimic) */
+  .phone { height: 470px; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column;
+    background: linear-gradient(165deg, #d4e6a5 0%, #a9d08e 55%, #8cc38c 100%); border: 1.5px solid var(--line); }
+  .tg-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 10px 6px; }
+  .tg-back, .tg-title { background: rgba(255,255,255,.85); border-radius: 999px; }
+  .tg-back { font-weight: 700; font-size: 15px; padding: 7px 12px; }
+  .tg-title { flex: 1; text-align: center; padding: 5px 10px; line-height: 1.15; font-size: 14px; }
+  .tg-title b { display: block; }
+  .tg-title small { color: #6E7487; font-size: 12px; }
+  .tg-ava { width: 36px; height: 36px; border-radius: 50%; background: var(--coral); color: #fff; font-weight: 800; display: grid; place-items: center; flex: none; }
+  .tg-chat { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 8px 10px; overflow: hidden; }
+  .b { position: relative; background: #fff; border-radius: 16px 16px 16px 4px; padding: 8px 10px 18px; font-size: 14px; line-height: 1.38; color: #111; max-width: 92%; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
+  .b p { margin: 0 0 6px; } .b p:last-of-type { margin-bottom: 0; }
+  .b .small { color: #6E7487; font-size: 12.5px; margin-bottom: 2px; }
+  .b q { display: block; font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.28; margin: 0 0 6px; quotes: "„" "”"; }
+  .b .t { position: absolute; right: 9px; bottom: 4px; font-size: 11px; color: #6E7487; }
+  .b.out { align-self: flex-end; background: #e1fec6; border-radius: 16px 16px 4px 16px; display: flex; align-items: center; gap: 10px; }
+  .b.out .t { color: #4f8a4f; }
+  .b .thumb { width: 38px; height: 48px; }
+  .kb { display: flex; gap: 6px; max-width: 92%; }
+  .kb span { flex: 1; text-align: center; background: rgba(30,42,68,.35); color: #fff; border-radius: 10px; padding: 7px 4px; font-size: 13px; font-weight: 600; }
+  .tg-bar { display: flex; align-items: center; gap: 8px; padding: 8px 10px 12px; }
+  .tg-ic { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.9); display: grid; place-items: center; font-size: 15px; flex: none; }
+  .tg-input { flex: 1; background: rgba(255,255,255,.9); border-radius: 999px; padding: 8px 14px; color: #8a90a2; font-size: 14px; }
+  .slide .cap { margin: 10px 2px 0; font-weight: 700; font-size: 15px; }
   .swipe { margin: 8px 0 0; }
 
   /* Știm cum e */
@@ -260,32 +275,34 @@
       <p class="note chat-label">Așa arată pe Telegram:</p>
       <ul class="slides" aria-label="Exemple de mesaje pe Telegram">
         <li class="slide">
-          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
-          <div class="msg me"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span></div>
-          <div class="msg bot">
-            <p class="small">Text propus, în vocea ta:</p>
-            <q>Trei săptămâni de lucru, un singur detaliu de care sunt mândru.</q>
-            <p>Se publică mâine la 19:00.</p>
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b out"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span><span class="t">18:42 ✓✓</span></div>
+              <div class="b in"><p class="small">Text propus, în vocea ta:</p><q>Trei săptămâni de lucru, un singur detaliu de care sunt mândru.</q><p>Se publică mâine la 19:00.</p><span class="t">18:43</span></div>
+              <div class="kb" aria-hidden="true"><span>✅ Aprob</span><span>✏️ Modific</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
           </div>
-          <div class="chips" aria-hidden="true"><span class="chip">Aprob</span><span class="chip">Modific</span></div>
           <p class="cap">Aprobi din Telegram</p>
         </li>
         <li class="slide">
-          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
-          <div class="msg bot">
-            <p><b>📊 Săptămâna trecută (26 oct – 1 nov)</b><br>Au ieșit: 2 postări (Reels și carusele).<br>Din plan: 1 din 4.</p>
-            <p>Au rămas:<br>• Luni: sfaturi de DJ sau producător (Reel)<br>• Marți: muzică, cu o întrebare în text (carusel)<br>• Miercuri: omul din spatele muzicii (carusel)</p>
-            <p class="time">09:00</p>
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b in"><p><b>📊 Săptămâna trecută (26 oct – 1 nov)</b><br>Au ieșit: 2 postări (Reels și carusele).<br>Din plan: 1 din 4.</p><p>Au rămas:<br>• Luni: sfaturi de DJ sau producător (Reel)<br>• Marți: muzică, cu o întrebare în text (carusel)<br>• Miercuri: omul din spatele muzicii (carusel)</p><span class="t">09:00</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
           </div>
           <p class="cap">Îți spunem ce lipsește din plan</p>
         </li>
         <li class="slide">
-          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
-          <div class="msg bot">
-            <p><b>📌 Azi la 18:00: un Story pe care îl postezi tu</b></p>
-            <p>🎬 Poză din studio + sondaj: „Cu ce piesă să-mi deschid următorul set?”</p>
-            <p>Story-urile nu se publică automat, așa că pe acesta îl postezi tu.</p>
-            <p class="time">09:01</p>
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b in"><p><b>📌 Azi la 18:00: un Story pe care îl postezi tu</b></p><p>🎬 Poză din studio + sondaj: „Cu ce piesă să-mi deschid următorul set?”</p><p>Story-urile nu se publică automat, așa că pe acesta îl postezi tu.</p><span class="t">09:01</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
           </div>
           <p class="cap">Idei de Story, la ora potrivită</p>
         </li>
