@@ -97,6 +97,7 @@
 
   /* Conversația (ilustrație, nu se apasă nimic) */
   .chat { background: var(--panel); border-radius: 20px; padding: 18px 16px; margin: 22px 0 0; max-width: 420px; }
+  .chat-label { margin: 0 0 10px; font-weight: 600; }
   .msg { border-radius: 16px; padding: 10px 12px; font-size: 15px; line-height: 1.4; max-width: 86%; }
   .msg.me { margin-left: auto; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; gap: 10px; width: max-content; }
   .thumb { width: 44px; height: 56px; border-radius: 8px; background: linear-gradient(160deg, #3C4763, #1E2A44); display: grid; place-items: center; flex: none; }
@@ -230,11 +231,11 @@
     <div>
       <p class="eyebrow">Un specialist în Instagram doar pentru tine, de la prețul unei cafele bune pe zi.</p>
       <h1 id="t-hero">Instagramul tău, ținut la&nbsp;zi.<br><mark>Tu doar trimiți clipul.</mark></h1>
-      <p class="lead">Trimiți clipul, primești textul în vocea ta, îl aprobi pe Telegram și se publică pe Instagram la ora potrivită. Fără aplicații de învățat.</p>
       <p class="lead"><strong>Postăm strategic:</strong> după datele contului tău, studiile mari despre Instagram și ce anunță oficial platforma.</p>
     </div>
 
     <figure class="chat" aria-label="Exemplu de conversație pe Telegram">
+      <figcaption class="note chat-label">Așa arată pe Telegram:</figcaption>
       <div class="msg me"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span></div>
       <div class="msg bot">
         <p class="small">Text propus, în vocea ta:</p>
