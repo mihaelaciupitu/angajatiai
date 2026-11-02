@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- VARIANTA DE PROBĂ: nu apare în Google. La „da, publică" se șterge rândul de mai jos. -->
 <meta name="robots" content="noindex, nofollow">
-<title>[Nume] · Tu îți faci treaba. Noi o arătăm.</title>
+<title>[Nume] · Instagramul tău, ținut la zi</title>
 <meta name="description" content="Trimiți clipul pe Telegram, primești textul în vocea ta și se publică pe Instagram la ora potrivită. Prima lună gratuită.">
 <meta name="theme-color" content="#FFFCF9">
 
@@ -18,11 +18,11 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:site_name" content="[Nume]">
-<meta property="og:title" content="[Nume] · Tu îți faci treaba. Noi o arătăm.">
+<meta property="og:title" content="[Nume] · Instagramul tău, ținut la zi. Tu doar trimiți clipul.">
 <meta property="og:description" content="Trimiți clipul pe Telegram, primești textul în vocea ta și se publică pe Instagram la ora potrivită. Prima lună gratuită.">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="[Nume]: Tu îți faci treaba. Noi o arătăm. Instagramul tău, ținut la zi. Prima lună gratuită.">
+<meta property="og:image:alt" content="[Nume]: Instagramul tău, ținut la zi. Tu doar trimiți clipul. Prima lună gratuită.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFFCF9'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF7A59'/%3E%3C/svg%3E">
 
@@ -61,7 +61,7 @@
   p { margin: 0 0 12px; }
   a { color: var(--ink); }
   a:focus-visible, summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
-  h1 mark { white-space: nowrap; }
+  h1 mark { white-space: normal; }
   .perday { display: block; font-size: 15px; margin-top: 2px; }
   mark { background: var(--coral-soft); color: var(--ink); padding: 0 .12em; border-radius: 6px;
     -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -97,6 +97,7 @@
 
   /* Conversația (ilustrație, nu se apasă nimic) */
   .chat { background: var(--panel); border-radius: 20px; padding: 18px 16px; margin: 22px 0 0; max-width: 420px; }
+  .chat-label { margin: 0 0 10px; font-weight: 600; }
   .msg { border-radius: 16px; padding: 10px 12px; font-size: 15px; line-height: 1.4; max-width: 86%; }
   .msg.me { margin-left: auto; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; gap: 10px; width: max-content; }
   .thumb { width: 44px; height: 56px; border-radius: 8px; background: linear-gradient(160deg, #3C4763, #1E2A44); display: grid; place-items: center; flex: none; }
@@ -107,6 +108,16 @@
   .msg.bot p:last-child { margin: 0; color: var(--text2); }
   .chips { display: flex; gap: 8px; margin-top: 10px; }
   .chip { border: 1px solid var(--ink); border-radius: 10px; padding: 5px 14px; font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* Galeria cu capturi reale (ascunsă până vin pozele) */
+  .gallery { margin: 22px 0 0; max-width: 420px; }
+  .slides { list-style: none; margin: 0; padding: 0 0 6px; display: flex; gap: 12px; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .slides::-webkit-scrollbar { display: none; }
+  .slide { flex: 0 0 74%; scroll-snap-align: start; background: var(--panel); border-radius: 20px; padding: 10px 10px 12px; }
+  .slide img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: bottom; border-radius: 14px; background: var(--card); }
+  .slide p { margin: 10px 4px 0; font-weight: 700; font-size: 15px; }
+  .swipe { margin: 8px 0 0; }
 
   /* Știm cum e */
   .pains { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
@@ -189,6 +200,7 @@
     .hero { padding: 40px 0 72px; }
     .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
     .hero .chat { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-self: end; width: 100%; }
+    .hero .gallery { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-self: end; width: 100%; }
     .btn { width: auto; display: inline-flex; }
     .cta .btn { min-width: 300px; }
     .pains { grid-template-columns: repeat(2, 1fr); }
@@ -217,13 +229,13 @@
 <section class="hero" aria-labelledby="t-hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Instagramul tău, ținut la zi</p>
-      <h1 id="t-hero">Tu îți faci treaba. <mark>Noi o arătăm.</mark></h1>
-      <p class="lead">Trimiți clipul, primești textul în vocea ta, îl aprobi pe Telegram și se publică pe Instagram la ora potrivită. Fără aplicații de învățat.</p>
+      <p class="eyebrow">Un specialist în Instagram doar pentru tine, de la prețul unei cafele bune pe zi.</p>
+      <h1 id="t-hero">Instagramul tău, ținut la&nbsp;zi.<br><mark>Tu doar trimiți clipul.</mark></h1>
       <p class="lead"><strong>Postăm strategic:</strong> după datele contului tău, studiile mari despre Instagram și ce anunță oficial platforma.</p>
     </div>
 
     <figure class="chat" aria-label="Exemplu de conversație pe Telegram">
+      <figcaption class="note chat-label">Așa arată pe Telegram:</figcaption>
       <div class="msg me"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span></div>
       <div class="msg bot">
         <p class="small">Text propus, în vocea ta:</p>
@@ -232,6 +244,29 @@
       </div>
       <div class="chips" aria-hidden="true"><span class="chip">Aprob</span><span class="chip">Modific</span></div>
     </figure>
+
+    <!-- ASCUNS: GALERIA CU CAPTURI REALE DIN TELEGRAM (înlocuiește conversația desenată de mai sus).
+         Ca să apară: 1) pune în preview/ fișierele tg-1.webp, tg-2.webp, tg-3.webp (capturi reale, verticale, fără datele altor oameni);
+         2) șterge cuvântul „hidden” de pe rândul <div class="gallery" ...> de mai jos;
+         3) adaugă cuvântul „hidden” pe rândul <figure class="chat" ...> de mai sus, ca să dispară conversația desenată.
+         Glisarea merge fără JavaScript și nu se schimbă singură. -->
+    <div class="gallery" id="galerie" hidden>
+      <ul class="slides" aria-label="Capturi reale din Telegram">
+        <li class="slide">
+          <img src="tg-1.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: clipul trimis, textul propus și butoanele Aprob și Modific">
+          <p>Aprobi din Telegram</p>
+        </li>
+        <li class="slide">
+          <img src="tg-2.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: reminder cu ce lipsește din planul săptămânii">
+          <p>Îți spunem ce să filmezi</p>
+        </li>
+        <li class="slide">
+          <img src="tg-3.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: strategia lunii">
+          <p>Strategia lunii</p>
+        </li>
+      </ul>
+      <p class="note swipe" aria-hidden="true">Glisează pentru mai multe →</p>
+    </div>
 
     <div class="cta">
       <!-- LINK ÎNCEPE LUNA GRATUITĂ (1 din 4) -->
@@ -346,6 +381,7 @@
     <div class="after">
       <p>Luna gratuită începe la prima postare, cel târziu la 7 zile după ce setup-ul e gata.</p>
       <p><strong>Ce nu facem:</strong> nu filmăm în locul tău și nu facem afișe. Lucrăm cu ce trimiți tu.</p>
+      <p>Asistentul pentru Instagram e primul din echipa [Nume]. Urmează și alții.</p>
     </div>
   </div>
 </section>
@@ -401,9 +437,12 @@
     <details><summary>Se publică ceva fără aprobarea mea?</summary>
       <p>Nu. Nimic nu apare până nu aprobi. Dacă nu-ți place textul, ceri altă variantă sau îl scrii tu.</p></details>
     <details><summary>Cine scrie textele?</summary>
-      <p>Un asistent AI, care pornește de la stilul și postările tale de până acum. Tu aprobi sau schimbi fiecare text. Postăm doar pozele și clipurile tale reale.</p></details>
+      <p>Un asistent AI, care pornește de la stilul și postările tale de până acum. Tu aprobi sau schimbi fiecare text. Postăm doar pozele și clipurile tale reale. Asistentului tău îi poți da ce nume vrei.</p></details>
     <details><summary>Cât timp îmi cere?</summary>
       <p>Câteva minute pe postare: trimiți materialul și citești textul. Setup-ul îl facem împreună, la început.</p></details>
+    <!-- CIFRE DE ACTUALIZAT când se schimbă salariul minim. Sursa: 4.325 lei brut din 1 iulie 2026 (HG 146/2026), cost total angajator 4.418 lei (startupcafe.ro, verificat 2 nov 2026). -->
+    <details><summary>De ce n-aș angaja pe cineva?</summary>
+      <p>Poți. Un angajat cu salariul minim costă firma 4.418 lei pe lună, iar un specialist în social media costă mai mult. Pachetul Profesional costă 850 lei pe lună, adică mai puțin de o cincime.</p></details>
     <details><summary>Trebuie să-ți dau parola?</summary>
       <p>Nu. Conectezi contul printr-o autorizare oficială Instagram, pe care o poți retrage oricând. Îți trebuie un cont de creator sau de afacere; îl schimbi gratuit din setări. Ce date folosim scrie în <a href="../confidentialitate.html">Politica de confidențialitate</a>.</p></details>
     <details><summary>Garantați un număr de urmăritori?</summary>
