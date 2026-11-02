@@ -6,7 +6,7 @@ Deschide `preview/index.html` (sau `index.html`, după publicare), caută textul
 
 | Secțiunea | Caută | Ce pregătești înainte |
 |---|---|---|
-| Demo video (la „Cum funcționează") | `<figure id="demo" hidden` | Fișierele `demo.mp4` și `demo.jpg` (o imagine din video), puse în același folder cu pagina. |
+| Demo video (la „Cum funcționează") | `<figure id="demo" hidden` | Fișierul `demo.mp4`, pus în același folder cu pagina. Pe rândul care începe cu `<video` schimbi și `preload="none"` în `preload="metadata"`, ca să se vadă primul cadru. |
 | Rezultate (studii de caz) | `<section id="rezultate"` | Cel puțin un caz real, adăugat după `CUM-ADAUG-UN-STUDIU-DE-CAZ.md`. |
 | Cine e în spate | `<section id="cine"` | Poza ta `mihaela.jpg` (pătrată, cel puțin 400×400), cele două rânduri despre tine în locul lui `[două rânduri]` și 2 recenzii reale (nume întreg, meserie, cont de Instagram), cu acordul clienților. |
 | Foaia gratuită | `<section id="foaia"` | Foaia gata de trimis pe WhatsApp. |
