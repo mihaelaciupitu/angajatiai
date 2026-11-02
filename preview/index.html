@@ -62,7 +62,7 @@
   a { color: var(--ink); }
   a:focus-visible, summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
   h1 mark { white-space: nowrap; }
-  .perday { white-space: nowrap; }
+  .perday { display: block; font-size: 15px; margin-top: 2px; }
   mark { background: var(--coral-soft); color: var(--ink); padding: 0 .12em; border-radius: 6px;
     -webkit-box-decoration-break: clone; box-decoration-break: clone; }
   .note { font-size: 13px; line-height: 1.45; color: var(--note); }
@@ -137,6 +137,7 @@
   .plan .btn { margin-top: 20px; }
   .alt { margin: 10px 0 0; color: var(--text2); font-size: 16px; }
   .plan .alt { text-align: center; }
+  .plan .list + .alt { margin-top: 18px; }
   .year { background: var(--panel); border-radius: 20px; padding: 16px 18px; color: var(--text2); margin-bottom: 12px; }
   .year strong { color: var(--ink); }
   .after p { color: var(--text2); font-size: 16px; }
@@ -288,7 +289,7 @@
       <article class="plan" aria-labelledby="p1">
         <h3 id="p1">Esențial</h3>
         <p class="for">Pentru cine vrea să posteze constant, fără bătăi de cap.</p>
-        <p class="price"><b>690 lei</b> / lună <span class="perday">· cam 23 lei pe zi</span></p>
+        <p class="price"><b>690 lei</b> / lună <span class="perday">cam 23 lei pe zi</span></p>
         <p class="note">setup 790 lei, o singură dată · sistem 100% personalizat</p>
         <ul class="list">
           <li class="yes"><span class="sr">Include: </span>Texte în vocea ta, aprobate de tine</li>
@@ -298,6 +299,8 @@
           <li class="no"><span class="sr">Nu include: </span>Răspunsuri la comentarii</li>
           <li class="no"><span class="sr">Nu include: </span>Discuție lunară</li>
         </ul>
+        <!-- LINK ÎNCEPE CU ESENȚIAL -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Esen%C8%9Bial.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Esențial</a></p>
       </article>
 
       <article class="plan pro" aria-labelledby="p2">
@@ -332,6 +335,8 @@
           <li class="yes"><span class="sr">Include: </span>Strategie de 2 ori pe lună și plan pentru lansări</li>
           <li class="yes"><span class="sr">Include: </span>Răspuns prioritar</li>
         </ul>
+        <!-- LINK ÎNCEPE CU PREMIUM -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Premium.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Premium</a></p>
       </article>
     </div>
 
