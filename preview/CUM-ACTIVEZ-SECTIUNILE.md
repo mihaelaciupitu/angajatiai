@@ -33,4 +33,4 @@ Nimic inventat: fără recenzii, cifre sau poze care nu sunt reale.
 Scrie-i lui Claude: „Activează secțiunea Foaia gratuită și verifică pagina."
 
 ## Galeria de sus („Așa arată pe Telegram”)
-E vizibilă și are 3 slide-uri desenate după mesaje reale ale asistentului (traduse, fără numele clientului). Ca să schimbi un text sau să adaugi un slide, scrie-i lui Claude.
+E vizibilă și are 3 slide-uri desenate ca în Telegram: un exemplu pentru o cofetărie, cu aceeași structură ca mesajele reale ale asistentului. Ca să schimbi un text sau să adaugi un slide, scrie-i lui Claude.
