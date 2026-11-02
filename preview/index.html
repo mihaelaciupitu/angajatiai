@@ -97,7 +97,6 @@
 
   /* Conversația (ilustrație, nu se apasă nimic) */
   .chat { background: var(--panel); border-radius: 20px; padding: 18px 16px; margin: 32px 0 0; max-width: 420px; }
-  .chat-label { margin: 0 0 10px; font-weight: 600; }
   .msg { border-radius: 16px; padding: 10px 12px; font-size: 15px; line-height: 1.4; max-width: 86%; }
   .msg.me { margin-left: auto; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; gap: 10px; width: max-content; }
   .thumb { width: 44px; height: 56px; border-radius: 8px; background: linear-gradient(160deg, #3C4763, #1E2A44); display: grid; place-items: center; flex: none; }
@@ -109,14 +108,23 @@
   .chips { display: flex; gap: 8px; margin-top: 10px; }
   .chip { border: 1px solid var(--ink); border-radius: 10px; padding: 5px 14px; font-size: 14px; font-weight: 600; color: var(--ink); }
 
-  /* Galeria cu capturi reale (ascunsă până vin pozele) */
-  .gallery { margin: 22px 0 0; max-width: 420px; }
+  /* Galeria „Așa arată pe Telegram” */
+  .gallery { margin: 32px 0 0; max-width: 420px; }
+  .gallery .chat-label { margin: 0 0 10px; font-weight: 600; }
   .slides { list-style: none; margin: 0; padding: 0 0 6px; display: flex; gap: 12px; overflow-x: auto;
-    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; align-items: stretch; }
   .slides::-webkit-scrollbar { display: none; }
-  .slide { flex: 0 0 74%; scroll-snap-align: start; background: var(--panel); border-radius: 20px; padding: 10px 10px 12px; }
-  .slide img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: bottom; border-radius: 14px; background: var(--card); }
-  .slide p { margin: 10px 4px 0; font-weight: 700; font-size: 15px; }
+  .slide { flex: 0 0 86%; scroll-snap-align: start; background: var(--panel); border-radius: 20px; padding: 0 12px 14px; display: flex; flex-direction: column; }
+  .tg-head { display: flex; align-items: center; gap: 10px; margin: 0 -12px 12px; padding: 10px 14px; border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,.6); border-radius: 20px 20px 0 0; font-size: 14px; line-height: 1.2; }
+  .tg-head b { display: block; }
+  .tg-head small { color: var(--note); font-size: 12px; }
+  .tg-ava { width: 30px; height: 30px; border-radius: 50%; background: var(--coral-soft); flex: none; }
+  .slide .msg.bot { max-width: 100%; margin-top: 8px; }
+  .slide .msg.bot p { margin: 0 0 8px; color: var(--ink); }
+  .slide .msg.bot p.small { color: var(--note); margin-bottom: 4px; }
+  .slide .msg.bot .time { text-align: right; font-size: 12px; color: var(--note); margin: 0; }
+  .slide .cap { margin: auto 2px 0; padding-top: 12px; font-weight: 700; font-size: 15px; }
   .swipe { margin: 8px 0 0; }
 
   /* Știm cum e */
@@ -201,8 +209,10 @@
     .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
     .hero .wrap > div:first-child { grid-column: 1; grid-row: 1; align-self: end; }
     .hero .cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 0; }
-    .hero .chat { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-self: end; width: 100%; }
     .hero .gallery { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-self: end; width: 100%; }
+    .slides { scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-bottom: 10px; }
+    .slides::-webkit-scrollbar { display: block; height: 6px; }
+    .slides::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
     .btn { width: auto; display: inline-flex; }
     .cta .btn { min-width: 300px; }
     .pains { grid-template-columns: repeat(2, 1fr); }
@@ -244,39 +254,45 @@
       <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
     </div>
 
-    <figure class="chat" aria-label="Exemplu de conversație pe Telegram">
-      <figcaption class="note chat-label">Așa arată pe Telegram:</figcaption>
-      <div class="msg me"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span></div>
-      <div class="msg bot">
-        <p class="small">Text propus, în vocea ta:</p>
-        <q>Trei săptămâni de lucru, un singur detaliu de care sunt mândru.</q>
-        <p>Se publică mâine la 19:00.</p>
-      </div>
-      <div class="chips" aria-hidden="true"><span class="chip">Aprob</span><span class="chip">Modific</span></div>
-    </figure>
-
-    <!-- ASCUNS: GALERIA CU CAPTURI REALE DIN TELEGRAM (înlocuiește conversația desenată de mai sus).
-         Ca să apară: 1) pune în preview/ fișierele tg-1.webp, tg-2.webp, tg-3.webp (capturi reale, verticale, fără datele altor oameni);
-         2) șterge cuvântul „hidden” de pe rândul <div class="gallery" ...> de mai jos;
-         3) adaugă cuvântul „hidden” pe rândul <figure class="chat" ...> de mai sus, ca să dispară conversația desenată.
-         Glisarea merge fără JavaScript și nu se schimbă singură. -->
-    <div class="gallery" id="galerie" hidden>
-      <ul class="slides" aria-label="Capturi reale din Telegram">
+    <!-- GALERIA „AȘA ARATĂ PE TELEGRAM” (ilustrații după mesaje reale ale asistentului, traduse și fără numele clientului).
+         Glisarea merge fără JavaScript și nu se schimbă singură. Pentru capturi reale: vezi CUM-ACTIVEZ-SECTIUNILE.md. -->
+    <div class="gallery" id="galerie">
+      <p class="note chat-label">Așa arată pe Telegram:</p>
+      <ul class="slides" aria-label="Exemple de mesaje pe Telegram">
         <li class="slide">
-          <img src="tg-1.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: clipul trimis, textul propus și butoanele Aprob și Modific">
-          <p>Aprobi din Telegram</p>
+          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
+          <div class="msg me"><span class="thumb" aria-hidden="true"></span><span>clipul de azi</span></div>
+          <div class="msg bot">
+            <p class="small">Text propus, în vocea ta:</p>
+            <q>Trei săptămâni de lucru, un singur detaliu de care sunt mândru.</q>
+            <p>Se publică mâine la 19:00.</p>
+          </div>
+          <div class="chips" aria-hidden="true"><span class="chip">Aprob</span><span class="chip">Modific</span></div>
+          <p class="cap">Aprobi din Telegram</p>
         </li>
         <li class="slide">
-          <img src="tg-2.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: reminder cu ce lipsește din planul săptămânii">
-          <p>Îți spunem ce să filmezi</p>
+          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
+          <div class="msg bot">
+            <p><b>📊 Săptămâna trecută (26 oct – 1 nov)</b><br>Au ieșit: 2 postări (Reels și carusele).<br>Din plan: 1 din 4.</p>
+            <p>Au rămas:<br>• Luni: sfaturi de DJ sau producător (Reel)<br>• Marți: muzică, cu o întrebare în text (carusel)<br>• Miercuri: omul din spatele muzicii (carusel)</p>
+            <p class="time">09:00</p>
+          </div>
+          <p class="cap">Îți spunem ce lipsește din plan</p>
         </li>
         <li class="slide">
-          <img src="tg-3.webp" width="600" height="1300" loading="lazy" alt="Captură reală din Telegram: strategia lunii">
-          <p>Strategia lunii</p>
+          <div class="tg-head" aria-hidden="true"><span class="tg-ava"></span><span><b>Asistentul tău</b><small>bot</small></span></div>
+          <div class="msg bot">
+            <p><b>📌 Azi la 18:00: un Story pe care îl postezi tu</b></p>
+            <p>🎬 Poză din studio + sondaj: „Cu ce piesă să-mi deschid următorul set?”</p>
+            <p>Story-urile nu se publică automat, așa că pe acesta îl postezi tu.</p>
+            <p class="time">09:01</p>
+          </div>
+          <p class="cap">Idei de Story, la ora potrivită</p>
         </li>
       </ul>
       <p class="note swipe" aria-hidden="true">Glisează pentru mai multe →</p>
     </div>
+
 
   </div>
 </section>
