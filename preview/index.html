@@ -81,6 +81,18 @@
 
   /* Început */
   .hero { padding: 20px 0 48px; }
+  /* Telefon: titlul centrat, la mijlocul ecranului; butonul jos; din galerie se vede doar începutul */
+  @media (max-width: 699px) {
+    .hero { padding: 0 0 48px; }
+    .hero-top { min-height: calc(100vh - 67px - 96px); min-height: calc(100svh - 67px - 96px);
+      display: flex; flex-direction: column; text-align: center; padding: 12px 0 18px; }
+    .hero-text { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .hero .eyebrow { margin-top: 0; }
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .hero .cta { margin: 0 auto; width: 100%; }
+    .hero .gallery { margin-top: 6px; }
+    .hero .gallery .chat-label, .hero .swipe { text-align: center; }
+  }
   .eyebrow { font-weight: 700; font-size: 15px; color: var(--text2); margin: 16px 0 0; }
   .lead { font-size: 17px; color: var(--text2); max-width: 40ch; }
   .lead strong { color: var(--ink); font-weight: 700; }
@@ -222,9 +234,8 @@
     section { padding: 80px 0; }
     .hero { padding: 40px 0 72px; }
     .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
-    .hero .wrap > div:first-child { grid-column: 1; grid-row: 1; align-self: end; }
-    .hero .cta { grid-column: 1; grid-row: 2; align-self: start; margin-top: 0; }
-    .hero .gallery { grid-column: 2; grid-row: 1 / span 2; margin: 0; justify-self: end; width: 100%; }
+    .hero .cta { margin-top: 28px; }
+    .hero .gallery { grid-column: 2; grid-row: 1; margin: 0; justify-self: end; width: 100%; }
     .slides { scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-bottom: 10px; }
     .slides::-webkit-scrollbar { display: block; height: 6px; }
     .slides::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
@@ -255,7 +266,8 @@
 <!-- 6.2 ÎNCEPUT -->
 <section class="hero" aria-labelledby="t-hero">
   <div class="wrap">
-    <div>
+    <div class="hero-top">
+    <div class="hero-text">
       <p class="eyebrow">Specialistul tău în Instagram</p>
       <h1 id="t-hero">Tu îți faci treaba. <mark>Noi o arătăm.</mark></h1>
       <p class="lead">Trimiți clipul pe Telegram. Noi scriem textul, tu aprobi, iar postarea apare pe Instagram.</p>
@@ -267,6 +279,7 @@
       <p class="note">Prima lună gratuită · plătești doar setup-ul</p>
       <!-- LINK PROGRAMEAZĂ O DISCUȚIE (1 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
       <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
+    </div>
     </div>
 
     <!-- GALERIA „AȘA ARATĂ PE TELEGRAM” (exemplu pentru o cofetărie, cu aceeași structură ca mesajele reale ale asistentului).
