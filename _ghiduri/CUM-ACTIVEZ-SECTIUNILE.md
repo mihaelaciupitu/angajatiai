@@ -2,7 +2,7 @@
 
 Pe pagină sunt 4 secțiuni pregătite, dar ascunse. Fiecare are pe primul ei rând cuvântul `hidden`. Când ștergi cuvântul, secțiunea apare.
 
-Deschide `preview/index.html` (sau `index.html`, după publicare), caută textul din coloana „Caută" și șterge doar cuvântul `hidden` de pe acel rând.
+Deschide `index.html` (pagina publică; varianta de probă e în `preview/index.html`), caută textul din coloana „Caută" și șterge doar cuvântul `hidden` de pe acel rând.
 
 | Secțiunea | Caută | Ce pregătești înainte |
 |---|---|---|

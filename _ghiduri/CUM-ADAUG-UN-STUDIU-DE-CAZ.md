@@ -15,7 +15,7 @@ Doar lucruri reale. Fără cifre rotunjite în sus, fără citate inventate, fă
 7. **Linkul spre cont**.
 
 ## Unde îl pui
-Deschide fișierul `preview/index.html` (sau `index.html`, după publicare) și caută textul `ŞABLON STUDIU DE CAZ`.
+Deschide fișierul `index.html` (pagina publică; dacă lucrezi întâi pe probă, `preview/index.html`) și caută textul `ŞABLON STUDIU DE CAZ`.
 
 1. Copiază blocul dintre „copiază de aici" și „până aici".
 2. Lipește-l imediat sub el, **fără** semnele `<!--` și `-->`.
