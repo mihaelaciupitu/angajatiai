@@ -22,9 +22,9 @@ După:
 ```
 
 ## De înlocuit înainte de publicare
-- `[Nume]`: caută `[Nume]` și înlocuiește peste tot (apare și în titlul paginii și în previzualizare).
+- Numele „Angajatul tău digital”: dacă îl schimbi, caută-l în pagină și înlocuiește-l peste tot (apare și în titlul paginii și în previzualizare).
 - `[Datele firmei]`: în subsol.
-- `og.png` (imaginea de previzualizare) conține și ea `[Nume]`, deci trebuie refăcută după ce alegi numele.
+- `og.png` (imaginea de previzualizare) conține și ea numele, deci trebuie refăcută dacă îl schimbi.
 
 ## Regula
 Nimic inventat: fără recenzii, cifre sau poze care nu sunt reale.
