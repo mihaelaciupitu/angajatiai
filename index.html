@@ -3,32 +3,577 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Angajatul tău digital</title>
-<meta name="description" content="Angajatul tău digital (Angajați AI): asistent AI pentru Instagram, pentru profesioniști care nu au timp de social media.">
+<!-- ASCUNS DE GOOGLE până la promovare. Când vrei să apară în căutări, șterge rândul de mai jos. Linkul trimis direct merge oricum. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Angajatul tău digital · Specialistul tău în Instagram</title>
+<meta name="description" content="Trimiți clipul pe Telegram, primești textul în vocea ta și se publică pe Instagram la ora potrivită. Prima lună gratuită.">
+<meta name="theme-color" content="#FFFCF9">
+
+<!-- ===== ADRESA SITE-ULUI — schimbă aici la mutarea pe .ro (3 rânduri) ===== -->
+<link rel="canonical" href="https://mihaelaciupitu.github.io/angajatiai/">
+<meta property="og:url" content="https://mihaelaciupitu.github.io/angajatiai/">
+<meta property="og:image" content="https://mihaelaciupitu.github.io/angajatiai/og.png">
+<!-- ===== SFÂRȘIT ADRESA SITE-ULUI ===== -->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="Angajatul tău digital">
+<meta property="og:title" content="Angajatul tău digital · Tu îți faci treaba. Noi o arătăm.">
+<meta property="og:description" content="Trimiți clipul pe Telegram, primești textul în vocea ta și se publică pe Instagram la ora potrivită. Prima lună gratuită.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Angajatul tău digital: Tu îți faci treaba. Noi o arătăm. Specialistul tău în Instagram. Prima lună gratuită.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFFCF9'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF7A59'/%3E%3C/svg%3E">
+
+<!-- Fonturile sunt găzduite aici, în folderul fonts (licență OFL). Nu se încarcă nimic de la Google. -->
+<link rel="preload" href="fonts/figtree-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root { --lime: #c6f432; --ink: #141414; --muted: #555; }
+  @font-face { font-family: "Fraunces"; font-style: normal; font-weight: 600; font-display: swap;
+    src: url(fonts/fraunces-600-latin.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Fraunces"; font-style: normal; font-weight: 600; font-display: swap;
+    src: url(fonts/fraunces-600-latin-ext.woff2) format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: "Figtree"; font-style: normal; font-weight: 300 900; font-display: swap;
+    src: url(fonts/figtree-var-latin.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: "Figtree"; font-style: normal; font-weight: 300 900; font-display: swap;
+    src: url(fonts/figtree-var-latin-ext.woff2) format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+  :root {
+    --bg: #FFFCF9; --ink: #1E2A44; --text2: #3C4763; --note: #56607A;
+    --coral: #FF7A59; --coral-soft: #FFD9CC; --panel: #F6EEE9; --line: #E9DDD5;
+    --card: #FFFFFF; --off: #6E7487; --on-dark: #FFFCF9; --on-dark2: #E6E8EE;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--ink); color: #fff; font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  main { flex: 1; max-width: 760px; margin: 0 auto; padding: 72px 16px 40px; }
-  .tag { display: inline-block; background: var(--lime); color: var(--ink); font-weight: 700; font-size: 14px; padding: 3px 10px; border-radius: 4px; }
-  h1 { font-size: 40px; line-height: 1.1; margin: 20px 0 16px; }
-  p { color: #ddd; }
-  a { color: var(--lime); }
-  footer { max-width: 760px; width: 100%; margin: 0 auto; padding: 24px 16px 40px; font-size: 15px; color: #aaa; border-top: 1px solid #333; }
-  footer a { margin-right: 16px; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.5 var(--sans); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; color: var(--ink); margin: 0; }
+  h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.06; letter-spacing: -0.02em; margin: 10px 0 16px; }
+  h2 { font-size: 30px; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 20px; }
+  h3 { font-size: 22px; line-height: 1.2; }
+  p { margin: 0 0 12px; }
+  a { color: var(--ink); }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+  h1 mark { white-space: nowrap; }
+  .perday { display: block; font-size: 15px; margin-top: 2px; }
+  mark { background: var(--coral-soft); color: var(--ink); padding: 0 .12em; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .note { font-size: 13px; line-height: 1.45; color: var(--note); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 12px; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 20; border-radius: 8px; }
+  section { padding: 56px 0; }
+
+  /* Antet */
+  .top { padding: 14px 0; }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; text-decoration: none; }
+  .logo::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--coral); }
+  .top nav a { font-weight: 600; font-size: 15px; text-decoration: none; margin-left: 16px; padding: 8px 0; display: inline-block; }
+  .top nav a:hover { text-decoration: underline; }
+  .logo { white-space: nowrap; }
+  @media (max-width: 420px) { .logo { font-size: 16px; } .top nav a:first-child { display: none; } }
+
+  /* Început */
+  .hero { padding: 20px 0 48px; }
+  /* Telefon: titlul centrat, la mijlocul ecranului; butonul jos; din galerie se vede doar începutul */
+  @media (max-width: 699px) {
+    .hero { padding: 0 0 48px; }
+    .hero-top { min-height: calc(100vh - 67px - 96px); min-height: calc(100svh - 67px - 96px);
+      display: flex; flex-direction: column; text-align: center; padding: 12px 0 18px; }
+    .hero-text { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .hero .eyebrow { margin-top: 0; }
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .hero .cta { margin: 0 auto; width: 100%; }
+    .hero .gallery { margin-top: 6px; }
+    .hero .gallery .chat-label, .hero .swipe { text-align: center; }
+  }
+  .eyebrow { font-weight: 700; font-size: 15px; color: var(--text2); margin: 16px 0 0; }
+  .lead { font-size: 17px; color: var(--text2); max-width: 40ch; }
+  .lead strong { color: var(--ink); font-weight: 700; }
+
+  /* Butoane */
+  .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+    min-height: 54px; padding: 0 28px; border-radius: 999px; background: var(--coral); color: var(--ink);
+    font: 700 17px/1 var(--sans); text-decoration: none; }
+  .btn:hover { filter: brightness(1.04); }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .cta { margin-top: 22px; max-width: 420px; }
+  .cta .note { margin: 10px 0 8px; }
+  .talk { font-weight: 600; font-size: 16px; text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 6px 0; }
+
+  /* Conversația (ilustrație, nu se apasă nimic) */
+  .chat { background: var(--panel); border-radius: 20px; padding: 18px 16px; margin: 32px 0 0; max-width: 420px; }
+  .msg { border-radius: 16px; padding: 10px 12px; font-size: 15px; line-height: 1.4; max-width: 86%; }
+  .msg.me { margin-left: auto; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; gap: 10px; width: max-content; }
+  .thumb { width: 44px; height: 56px; border-radius: 8px; background: linear-gradient(160deg, #3C4763, #1E2A44); display: grid; place-items: center; flex: none; }
+  .thumb::after { content: ""; border-left: 11px solid var(--bg); border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+  .msg.bot { background: var(--card); border: 1px solid var(--line); margin-top: 10px; }
+  .msg.bot .small { font-size: 13px; color: var(--note); margin: 0 0 4px; }
+  .msg.bot q { display: block; font-family: var(--serif); font-weight: 600; font-size: 18px; line-height: 1.3; margin: 0 0 6px; quotes: "„" "”"; }
+  .msg.bot p:last-child { margin: 0; color: var(--text2); }
+  .chips { display: flex; gap: 8px; margin-top: 10px; }
+  .chip { border: 1px solid var(--ink); border-radius: 10px; padding: 5px 14px; font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  /* Galeria „Așa arată pe Telegram” */
+  .gallery { margin: 32px 0 0; max-width: 420px; }
+  .gallery .chat-label { margin: 0 0 10px; font-weight: 600; }
+  .slides { list-style: none; margin: 0; padding: 0 0 6px; display: flex; gap: 12px; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; align-items: stretch; }
+  .slides::-webkit-scrollbar { display: none; }
+  .slide { flex: 0 0 82%; scroll-snap-align: start; }
+  /* Ecranul de Telegram desenat (ilustrație, nu se apasă nimic) */
+  .phone { height: 470px; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column;
+    background: linear-gradient(165deg, #d4e6a5 0%, #a9d08e 55%, #8cc38c 100%); border: 1.5px solid var(--line); }
+  .tg-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 10px 6px; }
+  .tg-back, .tg-title { background: rgba(255,255,255,.85); border-radius: 999px; }
+  .tg-back { font-weight: 700; font-size: 15px; padding: 7px 12px; }
+  .tg-title { flex: 1; text-align: center; padding: 5px 10px; line-height: 1.15; font-size: 14px; }
+  .tg-title b { display: block; }
+  .tg-title small { color: #6E7487; font-size: 12px; }
+  .tg-ava { width: 36px; height: 36px; border-radius: 50%; background: var(--coral); color: #fff; font-weight: 800; display: grid; place-items: center; flex: none; }
+  .tg-chat { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 8px 10px; overflow: hidden; }
+  .b { position: relative; background: #fff; border-radius: 16px 16px 16px 4px; padding: 8px 10px 18px; font-size: 14px; line-height: 1.38; color: #111; max-width: 92%; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
+  .b p { margin: 0 0 6px; } .b p:last-of-type { margin-bottom: 0; }
+  .b .small { color: #6E7487; font-size: 12.5px; margin-bottom: 2px; }
+  .b q { display: block; font-family: var(--serif); font-weight: 600; font-size: 16px; line-height: 1.28; margin: 0 0 6px; quotes: "„" "”"; }
+  .b .t { position: absolute; right: 9px; bottom: 4px; font-size: 11px; color: #6E7487; }
+  .b.out { align-self: flex-end; background: #e1fec6; border-radius: 16px 16px 4px 16px; display: flex; align-items: center; gap: 10px; }
+  .b.out .t { color: #4f8a4f; }
+  .b .thumb { width: 38px; height: 48px; }
+  .kb { display: flex; gap: 6px; max-width: 92%; }
+  .kb span { flex: 1; text-align: center; background: rgba(30,42,68,.35); color: #fff; border-radius: 10px; padding: 7px 4px; font-size: 13px; font-weight: 600; }
+  .tg-bar { display: flex; align-items: center; gap: 8px; padding: 8px 10px 12px; }
+  .tg-ic { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.9); display: grid; place-items: center; font-size: 15px; flex: none; }
+  .tg-input { flex: 1; background: rgba(255,255,255,.9); border-radius: 999px; padding: 8px 14px; color: #8a90a2; font-size: 14px; }
+  .slide .cap { margin: 10px 2px 0; font-weight: 700; font-size: 15px; }
+  .swipe { margin: 8px 0 0; }
+
+  /* Știm cum e */
+  .pains { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .pains li { background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; padding: 16px 18px; color: var(--text2); }
+
+  /* Pași */
+  .steps { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 14px; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding-left: 52px; color: var(--text2); min-height: 38px; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: -4px; width: 38px; height: 38px; border-radius: 50%;
+    background: var(--coral-soft); color: var(--ink); font-weight: 800; display: grid; place-items: center; }
+  .steps strong { color: var(--ink); }
+
+  /* Prețuri */
+  .plans { display: grid; gap: 22px; margin: 26px 0 20px; }
+  .plan { background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; padding: 24px 20px 22px; position: relative; }
+  .plan.pro { border: 2px solid var(--coral); }
+  .badge { position: absolute; top: -13px; left: 20px; background: var(--coral); color: var(--ink); font-size: 13px; font-weight: 800; padding: 4px 12px; border-radius: 999px; }
+  .for { color: var(--text2); font-size: 16px; margin: 6px 0 14px; }
+  .price { margin: 0; font-size: 16px; color: var(--text2); }
+  .price b { font-family: var(--serif); font-weight: 600; font-size: 40px; color: var(--ink); letter-spacing: -0.02em; }
+  .plan .note { margin: 2px 0 14px; }
+  .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 16px; }
+  .list li { padding-left: 28px; position: relative; color: var(--ink); }
+  .list li::before { content: ""; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; background-repeat: no-repeat; background-size: 18px; }
+  .list .yes::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4 8-9' fill='none' stroke='%231E2A44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .list .no { color: var(--off); }
+  .list .no::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 5.5l9 9M14.5 5.5l-9 9' fill='none' stroke='%236E7487' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"); }
+  .plan .btn { margin-top: 20px; }
+  .alt { margin: 10px 0 0; color: var(--text2); font-size: 16px; }
+  .plan .alt { text-align: center; }
+  .plan .list + .alt { margin-top: 18px; }
+  .year { background: var(--panel); border-radius: 20px; padding: 16px 18px; color: var(--text2); margin-bottom: 12px; }
+  .year strong { color: var(--ink); }
+  .after p { color: var(--text2); font-size: 16px; }
+  .after strong { color: var(--ink); }
+
+  /* Cazuri / Cine e în spate (ascunse deocamdată) */
+  .cases { display: grid; gap: 16px; }
+  .case, .review { background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; padding: 20px; color: var(--text2); }
+  .case strong, .review strong { color: var(--ink); }
+  .me-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; }
+
+  /* Întrebări */
+  details { background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; list-style: none; padding: 16px 52px 16px 18px; font-weight: 700; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 24px; font-weight: 400; color: var(--ink); }
+  details[open] summary::after { content: "–"; }
+  details p { padding: 0 18px 16px; margin: 0; color: var(--text2); }
+
+  /* Foaia gratuită (ascunsă deocamdată) */
+  .dark { background: var(--ink); color: var(--on-dark2); border-radius: 20px; padding: 28px 20px; }
+  .dark h2 { color: var(--on-dark); }
+  .dark .label { display: inline-block; font-size: 13px; font-weight: 800; color: var(--on-dark); border: 1px solid var(--on-dark2); border-radius: 999px; padding: 3px 12px; margin-bottom: 12px; }
+  .dark .btn { margin-top: 16px; max-width: 420px; }
+
+  /* Final */
+  .final { text-align: center; padding-bottom: 64px; }
+  .final .cta { margin: 0 auto; }
+
+  footer { border-top: 1.5px solid var(--line); padding: 24px 0 36px; font-size: 15px; color: var(--text2); }
+  footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+  footer li { padding: 4px 0; }
+  footer .logo { font-size: 16px; }
+
+  /* Butonul lipit jos: doar pe telefon, apare din script; fără script nu apare deloc */
+  .sticky { display: none; }
+  @media (max-width: 699px) {
+    .sticky { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255, 252, 249, .96); border-top: 1px solid var(--line);
+      transform: translateY(110%); visibility: hidden; transition: transform .2s ease, visibility .2s; }
+    .sticky.on { transform: none; visibility: visible; }
+    html.has-sticky body { padding-bottom: 80px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .sticky { transition: none; } }
+
+  @media (min-width: 700px) {
+    .wrap { padding: 0 24px; }
+    section { padding: 80px 0; }
+    .hero { padding: 40px 0 72px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .hero .cta { margin-top: 28px; }
+    .hero .gallery { grid-column: 2; grid-row: 1; margin: 0; justify-self: end; width: 100%; }
+    .slides { scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-bottom: 10px; }
+    .slides::-webkit-scrollbar { display: block; height: 6px; }
+    .slides::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
+    .btn { width: auto; display: inline-flex; }
+    .cta .btn { min-width: 300px; }
+    .pains { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .steps li { padding: 52px 0 0; }
+    .plans { grid-template-columns: repeat(3, 1fr); align-items: start; }
+    .cases { grid-template-columns: repeat(2, 1fr); }
+    .dark { padding: 40px; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <span class="tag">Angajați AI</span>
-  <h1>Angajatul tău digital</h1>
-  <p>Un asistent AI pentru Instagram. Îi trimiți pe Telegram pozele, clipurile și ideile tale, iar el îți propune textele, le programează după ce le aprobi și le publică la ora potrivită.</p>
-  <p>Site-ul complet vine în curând. Până atunci ne găsești la <a href="mailto:angajatiai@gmail.com">angajatiai@gmail.com</a>.</p>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<!-- 6.1 ANTET -->
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./">Angajatul tău digital</a>
+    <nav aria-label="Meniu"><a href="#cum">Cum merge</a><a href="#preturi">Prețuri</a></nav>
+  </div>
+</header>
+
+<main id="continut">
+
+<!-- 6.2 ÎNCEPUT -->
+<section class="hero" aria-labelledby="t-hero">
+  <div class="wrap">
+    <div class="hero-top">
+    <div class="hero-text">
+      <p class="eyebrow">Specialistul tău în Instagram</p>
+      <h1 id="t-hero">Tu îți faci treaba. <mark>Noi o arătăm.</mark></h1>
+      <p class="lead">Trimiți clipul pe Telegram. Noi scriem textul, tu aprobi, iar postarea apare pe Instagram.</p>
+    </div>
+
+    <div class="cta">
+      <!-- LINK ÎNCEPE LUNA GRATUITĂ (1 din 4) -->
+      <a class="btn" id="cta-sus" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+      <p class="note">Prima lună gratuită · plătești doar setup-ul</p>
+      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (1 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+      <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
+    </div>
+    </div>
+
+    <!-- GALERIA „AȘA ARATĂ PE TELEGRAM” (exemplu pentru o cofetărie, cu aceeași structură ca mesajele reale ale asistentului).
+         Glisarea merge fără JavaScript și nu se schimbă singură. Pentru capturi reale: vezi _ghiduri/CUM-ACTIVEZ-SECTIUNILE.md. -->
+    <div class="gallery" id="galerie">
+      <p class="note chat-label">Așa arată pe Telegram. Exemplu pentru o cofetărie:</p>
+      <ul class="slides" aria-label="Exemple de mesaje pe Telegram">
+        <li class="slide">
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b out"><span class="thumb" aria-hidden="true"></span><span>tortul de azi 🎂</span><span class="t">18:42 ✓✓</span></div>
+              <div class="b in"><p class="small">Descrierea postării, în vocea ta:</p><q>Trei straturi de ciocolată și o noapte de răbdare. Tortul ăsta pleacă azi la o aniversare.</q><p>Se publică azi la 19:00.</p><span class="t">18:43</span></div>
+              <div class="kb" aria-hidden="true"><span>✅ Aprob</span><span>✏️ Modific</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
+          </div>
+          <p class="cap">Aprobi din Telegram</p>
+        </li>
+        <li class="slide">
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b in"><p><b>📊 Săptămâna trecută (26 oct – 1 nov)</b><br>Au ieșit: 2 postări (Reels și carusele).<br>Din plan: 1 din 4.</p><p>Au rămas:<br>• Luni: un tort, de la blat la decor (Reel)<br>• Marți: prăjitura săptămânii, cu o întrebare în text (carusel)<br>• Miercuri: omul din spatele vitrinei (carusel)</p><span class="t">09:00</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
+          </div>
+          <p class="cap">Îți spunem ce lipsește din plan</p>
+        </li>
+        <li class="slide">
+          <div class="phone">
+          <div class="tg-top" aria-hidden="true"><span class="tg-back">‹ 56</span><span class="tg-title"><b>Asistentul tău</b><small>bot</small></span><span class="tg-ava">A</span></div>
+            <div class="tg-chat">
+              <div class="b in"><p><b>📌 Azi la 18:00: un Story pe care îl postezi tu</b></p><p>🎬 Poză din laborator + sondaj: „Ce prăjitură facem sâmbătă?”</p><p>Story-urile nu se publică automat, așa că pe acesta îl postezi tu.</p><span class="t">09:01</span></div>
+            </div>
+          <div class="tg-bar" aria-hidden="true"><span class="tg-ic">📎</span><span class="tg-input">Mesaj</span><span class="tg-ic">🎙️</span></div>
+          </div>
+          <p class="cap">Idei de Story, la ora potrivită</p>
+        </li>
+      </ul>
+      <p class="note swipe" aria-hidden="true">Glisează pentru mai multe →</p>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- 6.3 ȘTIM CUM E -->
+<section aria-labelledby="t-stim">
+  <div class="wrap">
+    <h2 id="t-stim">Știm cum e.</h2>
+    <ul class="pains">
+      <li>Instagramul contează pentru munca ta, dar a ajuns un job cu normă întreagă. Și tu ai deja unul.</li>
+      <li>Algoritmul se tot schimbă și nu mai știi ce merge.</li>
+      <li>Ai sute de poze și clipuri în telefon, dar nu apuci să le postezi.</li>
+      <li>Scrii un text, îl ștergi, îl rescrii și tot nu-ți place.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6.4 CUM FUNCȚIONEAZĂ -->
+<section id="cum" aria-labelledby="t-cum">
+  <div class="wrap">
+    <h2 id="t-cum">Cum funcționează</h2>
+    <p class="lead" style="max-width:60ch;margin-bottom:24px"><strong>Postăm strategic:</strong> după datele contului tău, studiile mari despre Instagram și ce anunță oficial platforma.</p>
+    <ol class="steps">
+      <li><strong>Trimiți clipul sau poza</strong> pe Telegram, cu două vorbe despre ea.</li>
+      <li><strong>Primești textul în vocea ta</strong>, ora de publicare și o idee de Story.</li>
+      <li><strong>Aprobi sau ceri o modificare.</strong> Nimic nu pleacă fără tine.</li>
+      <li><strong>Postarea apare singură</strong> pe Instagram, la ora aleasă.</li>
+    </ol>
+    <p style="color:var(--text2);margin:6px 0 10px">O dată pe lună primești strategia, făcută din datele contului tău.</p>
+    <p class="note">Clipurile mari le urci într-un folder Google Drive, pregătit de noi.</p>
+
+    <!-- ASCUNS: DEMO VIDEO. Ca să apară: pune fișierul demo.mp4 lângă pagină, șterge cuvântul „hidden” de pe rândul de mai jos și schimbă preload="none" în preload="metadata" (ca să se vadă primul cadru). -->
+    <figure id="demo" hidden style="margin:28px 0 0;max-width:420px">
+      <video controls preload="none" width="720" height="1280" style="width:100%;height:auto;border-radius:20px;background:#F6EEE9">
+        <source src="demo.mp4" type="video/mp4">
+      </video>
+      <figcaption class="note" style="margin-top:8px">Demo de 2 minute: de la clip la postare.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 6.5 PREȚURI -->
+<section id="preturi" aria-labelledby="t-preturi">
+  <div class="wrap">
+    <h2 id="t-preturi">De la prețul unei cafele bune pe zi</h2>
+    <p class="lead" style="max-width:62ch">Nu e o aplicație în care muncești tu. Un om îți face un sistem 100% personalizat, apoi totul merge singur. Prima lună e gratuită la orice pachet. TVA inclus.</p>
+
+    <!-- ===================== PREȚURI — schimbă aici ===================== -->
+    <div class="plans">
+      <article class="plan" aria-labelledby="p1">
+        <h3 id="p1">Esențial</h3>
+        <p class="for">Pentru cine vrea să posteze constant, fără bătăi de cap.</p>
+        <p class="price"><b>690 lei</b> / lună <span class="perday">cam 23 lei pe zi</span></p>
+        <p class="note">setup 790 lei, o singură dată</p>
+        <ul class="list">
+          <li class="yes"><span class="sr">Include: </span>Texte în vocea ta, aprobate de tine</li>
+          <li class="yes"><span class="sr">Include: </span>Publicare la ora potrivită</li>
+          <li class="yes"><span class="sr">Include: </span>Idei de Story și remindere</li>
+          <li class="yes"><span class="sr">Include: </span>Strategie și raport în fiecare lună</li>
+          <li class="no"><span class="sr">Nu include: </span>Răspunsuri la comentarii</li>
+          <li class="no"><span class="sr">Nu include: </span>Discuție lunară</li>
+        </ul>
+        <!-- LINK ÎNCEPE CU ESENȚIAL -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Esen%C8%9Bial.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Esențial</a></p>
+      </article>
+
+      <article class="plan pro" aria-labelledby="p2">
+        <span class="badge">cel mai ales</span>
+        <h3 id="p2">Profesional</h3>
+        <p class="for">Pentru cine vrea să crească, nu doar să posteze.</p>
+        <p class="price"><b>850 lei</b> / lună <span class="perday">cam 28 lei pe zi</span></p>
+        <p class="note">setup 990 lei, o singură dată</p>
+        <ul class="list">
+          <li class="yes"><span class="sr">Include: </span>Tot din Esențial: texte, publicare, remindere, strategie</li>
+          <li class="yes"><span class="sr">Include: </span>Ciorne de răspuns la comentarii, trimise cu un buton</li>
+          <li class="yes"><span class="sr">Include: </span>Idei de postări din întrebările din comentarii</li>
+          <li class="yes"><span class="sr">Include: </span>Discuție lunară de 20 de minute</li>
+          <li class="yes"><span class="sr">Include: </span>Un om care îți ajustează stilul și sistemul, lună de lună</li>
+          <li class="yes"><span class="sr">Include: </span>Răspuns în aceeași zi lucrătoare</li>
+        </ul>
+        <!-- LINK ÎNCEPE LUNA GRATUITĂ (2 din 4), cu mesajul „cu Profesional” -->
+        <a class="btn" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Profesional.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+        <!-- LINK PROGRAMEAZĂ O DISCUȚIE (2 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+        <p class="alt">sau <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a></p>
+      </article>
+
+      <article class="plan" aria-labelledby="p3">
+        <h3 id="p3">Premium</h3>
+        <p class="for">Pentru cine are două conturi sau scrie în două limbi.</p>
+        <p class="price"><b>1.690 lei</b> / lună <span class="perday">cam 56 lei pe zi</span></p>
+        <p class="note">setup 1.790 lei, o singură dată</p>
+        <ul class="list">
+          <li class="yes"><span class="sr">Include: </span>Tot din Profesional: comentarii, discuție lunară, remindere</li>
+          <li class="yes"><span class="sr">Include: </span>Texte în română și engleză</li>
+          <li class="yes"><span class="sr">Include: </span>Până la 2 conturi</li>
+          <li class="yes"><span class="sr">Include: </span>Strategie de 2 ori pe lună și plan pentru lansări</li>
+          <li class="yes"><span class="sr">Include: </span>Răspuns prioritar</li>
+        </ul>
+        <!-- LINK ÎNCEPE CU PREMIUM -->
+        <p class="alt"><a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83%20cu%20Premium.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Începe cu Premium</a></p>
+      </article>
+    </div>
+
+    <p class="year"><strong>Cu plata pe an:</strong> plătești 10 luni și primești 13, cu setup-ul inclus. Esențial 6.900 · Profesional 8.500 · Premium 16.900 lei pe an.</p>
+    <!-- ===================== SFÂRȘIT PREȚURI ===================== -->
+
+    <div class="after">
+      <p>Luna gratuită începe la prima postare, cel târziu la 7 zile după ce setup-ul e gata.</p>
+      <p><strong>Ce nu facem:</strong> nu filmăm în locul tău și nu facem afișe. Lucrăm cu ce trimiți tu.</p>
+      <p>Asistentul pentru Instagram e primul din echipa „Angajatul tău digital”. Urmează și alții.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6.6 REZULTATE (studii de caz) — ASCUNS. Ca să apară: șterge cuvântul „hidden” de pe rândul <section id="rezultate" ...>.
+     Instrucțiuni: _ghiduri/CUM-ADAUG-UN-STUDIU-DE-CAZ.md -->
+<section id="rezultate" aria-labelledby="t-rezultate" hidden>
+  <div class="wrap">
+    <h2 id="t-rezultate">Rezultate reale</h2>
+    <div class="cases">
+      <!-- ŞABLON STUDIU DE CAZ — copiază de aici ...
+      <article class="case">
+        <h3>@numele.contului</h3>
+        <p class="note">Tipul afacerii (ex.: videograf de nunți)</p>
+        <p><strong>Înainte:</strong> situația de dinainte, pe scurt.</p>
+        <p><strong>Ce s-a schimbat:</strong> o cifră din Instagram, cu perioada (ex.: vizualizări +X% între 1 sep și 31 oct 2026).</p>
+        <p>„Fraza clientului, exact cum a spus-o.”</p>
+        <p><a href="https://www.instagram.com/numele.contului/" rel="noopener">Vezi contul</a></p>
+      </article>
+      ... până aici -->
+    </div>
+  </div>
+</section>
+
+<!-- 6.7 CINE E ÎN SPATE — ASCUNS. Ca să apară: completează poza, cele două rânduri și recenziile reale, apoi șterge cuvântul „hidden” de pe rândul <section id="cine" ...>. -->
+<section id="cine" aria-labelledby="t-cine" hidden>
+  <div class="wrap">
+    <h2 id="t-cine">Cine e în spate</h2>
+    <!-- POZA: pune fișierul mihaela.jpg (pătrat, cel puțin 400×400) lângă pagină -->
+    <img class="me-photo" src="mihaela.jpg" width="240" height="240" alt="Mihaela, fondatoarea Angajatul tău digital" loading="lazy">
+    <p class="lead">Sunt Mihaela. [două rânduri]</p>
+    <div class="cases" style="margin-top:20px">
+      <!-- RECENZIE 1 — doar reală, cu acordul clientului -->
+      <article class="review">
+        <p>„[Textul recenziei, exact cum l-a scris clientul]”</p>
+        <p><strong>[Nume întreg]</strong>, [meserie] · <a href="https://www.instagram.com/[cont]/" rel="noopener">@[cont]</a></p>
+      </article>
+      <!-- RECENZIE 2 — doar reală, cu acordul clientului -->
+      <article class="review">
+        <p>„[Textul recenziei, exact cum l-a scris clientul]”</p>
+        <p><strong>[Nume întreg]</strong>, [meserie] · <a href="https://www.instagram.com/[cont]/" rel="noopener">@[cont]</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 6.8 ÎNTREBĂRI -->
+<section aria-labelledby="t-intrebari">
+  <div class="wrap" style="max-width:820px">
+    <h2 id="t-intrebari">Întrebări</h2>
+    <details><summary>Merge și pentru afacerea mea?</summary>
+      <p>Da, dacă ai ce arăta. De exemplu: un cabinet, o cofetărie, un salon, un atelier, un antrenor personal. Tu trimiți pozele și clipurile, noi facem restul.</p></details>
+    <details><summary>Trebuie să învăț o aplicație?</summary>
+      <p>Nu. Totul merge pe Telegram, o aplicație gratuită de mesaje. Dacă n-o ai, o instalăm împreună la setup.</p></details>
+    <details><summary>Se publică ceva fără aprobarea mea?</summary>
+      <p>Nu. Nimic nu apare până nu aprobi. Dacă nu-ți place textul, ceri altă variantă sau îl scrii tu.</p></details>
+    <details><summary>Cine scrie textele?</summary>
+      <p>Un asistent AI, care pornește de la stilul și postările tale de până acum. Tu aprobi sau schimbi fiecare text. Postăm doar pozele și clipurile tale reale. Asistentului tău îi poți da ce nume vrei.</p></details>
+    <details><summary>Cât timp îmi cere?</summary>
+      <p>Câteva minute pe postare: trimiți materialul și citești textul. Setup-ul îl facem împreună, la început.</p></details>
+    <!-- CIFRE DE ACTUALIZAT când se schimbă salariul minim. Sursa: 4.325 lei brut din 1 iulie 2026 (HG 146/2026), cost total angajator 4.418 lei (startupcafe.ro, verificat 2 nov 2026). -->
+    <details><summary>De ce n-aș angaja pe cineva?</summary>
+      <p>Poți. Un angajat cu salariul minim costă firma 4.418 lei pe lună, iar un specialist în social media costă mai mult. Pachetul Profesional costă 850 lei pe lună, adică mai puțin de o cincime.</p></details>
+    <details><summary>Trebuie să-ți dau parola?</summary>
+      <p>Nu. Conectezi contul printr-o autorizare oficială Instagram și o poți retrage oricând. Ai nevoie de un cont de creator sau de afacere. Îl schimbi gratuit din setări. Ce date folosim scrie în <a href="confidentialitate.html">Politica de confidențialitate</a>.</p></details>
+    <details><summary>Garantați un număr de urmăritori?</summary>
+      <p>Nu garantăm un număr de urmăritori. Ne angajăm să-ți dăm o strategie făcută din datele tale.</p></details>
+    <details><summary>Ce se întâmplă dacă o postare nu apare?</summary>
+      <p>Dacă e din cauza sistemului nostru, o refacem în cel mult 24 de ore.</p></details>
+    <details><summary>Pot renunța?</summary>
+      <p>Da. Ne anunți până în ziua 25 a lunii și abonamentul se oprește la finalul lunii, fără penalități. Setup-ul nu se returnează. La plata pe an, suma se plătește dinainte și nu se returnează dacă renunți mai devreme.</p></details>
+    <!-- LINK PROGRAMEAZĂ O DISCUȚIE (3 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+    <p class="alt" style="margin-top:18px">Ai altă întrebare? <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>.</p>
+  </div>
+</section>
+
+<!-- 6.9 FOAIA GRATUITĂ — ASCUNS. Ca să apară: șterge cuvântul „hidden” de pe rândul <section id="foaia" ...>. -->
+<section id="foaia" aria-labelledby="t-foaia" hidden>
+  <div class="wrap">
+    <div class="dark">
+      <span class="label">Gratuit</span>
+      <h2 id="t-foaia">Instagram: regulile care contează acum</h2>
+      <p>O pagină cu ce spune oficial Instagram și ce arată studiile mari. Ți-o trimitem pe WhatsApp.</p>
+      <!-- LINK FOAIA GRATUITĂ -->
+      <a class="btn" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20foaia%20gratuit%C4%83%20despre%20Instagram." rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Cere foaia pe WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6.10 FINAL -->
+<section class="final" aria-labelledby="t-final">
+  <div class="wrap">
+    <h2 id="t-final">Trimite primul clip. Restul îl facem noi.</h2>
+    <div class="cta">
+      <!-- LINK ÎNCEPE LUNA GRATUITĂ (3 din 4) -->
+      <a class="btn" id="cta-final" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+      <p class="note">Plata lunară e fără angajament: renunți anunțând până în ziua 25 a lunii.</p>
+      <!-- LINK PROGRAMEAZĂ O DISCUȚIE (4 din 4). Aici va veni mai târziu linkul de programări din Google Calendar. -->
+      <a class="talk" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20A%C8%99%20vrea%20s%C4%83%20program%C4%83m%20o%20discu%C8%9Bie%20de%2020%20de%20minute.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener">Programează o discuție</a>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<!-- 6.11 SUBSOL -->
 <footer>
-  <a href="confidentialitate.html">Politica de confidențialitate</a>
-  <a href="confidentialitate.html#stergere-date">Ștergerea datelor</a>
-  <a href="confidentialitate.html#en">Privacy policy (EN)</a>
+  <div class="wrap">
+    <ul>
+      <li><span class="logo">Angajatul tău digital</span></li>
+      <li><a href="tel:+40749382857">0749 382 857</a></li>
+      <li><a href="mailto:angajatiai@gmail.com">angajatiai@gmail.com</a></li>
+      <li><a href="confidentialitate.html">Politica de confidențialitate</a></li>
+      <li><a href="confidentialitate.html#stergere-date">Ștergerea datelor</a></li>
+      <!-- DATELE FIRMEI (denumire, CUI, nr. Registrul Comerțului, sediu): de adăugat aici ca <li>…</li> înainte de promovare. -->
+    </ul>
+    <!-- Loc pentru varianta în engleză: <a href="en/" hreflang="en">English</a> -->
+  </div>
 </footer>
+
+<!-- BUTONUL LIPIT JOS (doar pe telefon). LINK ÎNCEPE LUNA GRATUITĂ (4 din 4) -->
+<div class="sticky" id="sticky">
+  <a class="btn" href="https://wa.me/40749382857?text=Bun%C4%83%2C%20Mihaela%21%20Vreau%20s%C4%83%20%C3%AEncep%20luna%20gratuit%C4%83.%20Contul%20meu%20de%20Instagram%3A%20%40" rel="noopener" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Începe luna gratuită</a>
+</div>
+<!-- Singurul script: arată butonul lipit jos după ce primul buton iese din ecran și îl ascunde când se vede butonul final. Fără urmărire. -->
+<script>
+(function () {
+  var s = document.getElementById('sticky'), a = document.getElementById('cta-sus'), z = document.getElementById('cta-final');
+  if (!s || !a || !z || !('IntersectionObserver' in window)) return;
+  var link = s.querySelector('a'), past = false, fin = false;
+  function u() {
+    var on = past && !fin;
+    s.classList.toggle('on', on);
+    document.documentElement.classList.toggle('has-sticky', on);
+    link.tabIndex = on ? 0 : -1;
+  }
+  new IntersectionObserver(function (e) { var r = e[0]; past = !r.isIntersecting && r.boundingClientRect.top < 0; u(); }).observe(a);
+  new IntersectionObserver(function (e) { var r = e[0]; fin = r.isIntersecting || r.boundingClientRect.top < 0; u(); }).observe(z);
+})();
+</script>
 </body>
 </html>
